@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strrchrprogram.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 19:44:46 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/01/12 20:03:36 by kaheinz          ###   ########.fr       */
+/*   Created: 2022/01/14 16:24:09 by kaheinz           #+#    #+#             */
+/*   Updated: 2022/02/06 05:49:40 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
+	char	*located;
+
+	located = NULL;
+	while (*s)
 	{
-		return (1);
+		if (*s == (char)c)
+			located = (char *)s;
+		s++;
 	}
-	return (0);
+	return (located);
 }
