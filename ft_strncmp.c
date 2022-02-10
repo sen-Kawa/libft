@@ -16,19 +16,24 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (*s1 != '\0' && *s2 != '\0' && i < n)
+	while (s1[i] != '\0' && s1[i] == s2[i] && i < n)
 		{
-			if (*s1 == *s2)
-				return (0);
-			s1++;
-			s2++;
+	//		if (i == n)
+	//			return (0);
+		//	s1++;
+		//	s2++;
 			i++;	
 		}
-	return(1);
+	return(s1[i] - s2[i]);
 }
 
 int	main(void)
 {
-	printf("%i", ft_strncmp("Hey", "hey", 2));
+	printf("%i\n", ft_strncmp("hey", "hey", 3));
+	printf("%i\n", ft_strncmp("hey", "Hey", 3));
+	printf("%i\n", ft_strncmp("hey", "hez", 3));
+	printf("%i\n", ft_strncmp("hez", "hey", 3));
+	printf("%i\n", ft_strncmp("aey", "hey", 3));
+	printf("%i\n", ft_strncmp("hey", "aey", 3));
 	return(0);
 }
