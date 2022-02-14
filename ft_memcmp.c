@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 15:54:55 by kaheinz           #+#    #+#             */
+/*   Updated: 2022/02/14 15:58:57 by kaheinz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -7,8 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (n > 0)
 	{
-		if (unsigned char*)(s1[i]) != (unsigned char*)(s2[i])
-				return (s1[i] - s2[i]);
+		if (*(unsigned char*)(s1)) != (*(unsigned char*)(s2))
+			return (s1 - s2);
 		else
 		{
 			i++;
