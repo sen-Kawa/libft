@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-//#include "libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -29,16 +28,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
-}
-
-int	main(void)
-{
-	char	s[] = "holiwis";
-	char	d[30];
-
-	ft_memmove(d, s, sizeof(char) * 30);
-	printf("destination is: %s\n", d);
-	ft_memmove(d, s, sizeof(s));
-	printf("destination is: %s\n", d);
-	return (0);
 }
