@@ -14,12 +14,12 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *bufdestination;
-	char *bufsource;
+	char	*bufdestination;
+	char	*bufsource;
 
 	bufdestination = (char *)dst;
-	bufsource = (char *)src;	
-	if((bufdestination != NULL) && (bufsource != NULL))
+	bufsource = (char *)src;
+	if ((bufdestination != NULL) && (bufsource != NULL))
 	{
 		while (len)
 		{
