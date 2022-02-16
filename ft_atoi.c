@@ -1,29 +1,34 @@
+#include <stdlib.h>
 #include <ctype.h>
 //#include "libft.h"
 #include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int result;
+	int  result;
+	int	sign;
 
-	i = 0;
 	result = 0;
-	while (*str)
+	sign = 1;
+
+	if (*str == '-')
 	{
-		//printf("%c\n", str[i]);
-		if (isdigit(*str) == 0)
-			return (-1);
+		sign = -1;
+		str++;
+	}
+	while (*str && isdigit(*str) == 1)
+	{
 		result = result * 10 + *str - '0';
 		str++;
 	}
-	return (result);
+	return (result * sign);
 }
 
 int main (void)
 {
-	char stringy[] = "-3";
+	char stringy[] = " -47s";
 
 	printf("%d\n", ft_atoi(stringy));
+	printf("%d\n", atoi(stringy));
 	return(0);
 }
