@@ -11,18 +11,19 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while (*str)
 	{
-		if (isdigit(str[i - '0']) == 0)
+		//printf("%c\n", str[i]);
+		if (isdigit(*str) == 0)
 			return (-1);
-		result = result * 10 + str[i] - '0';
-		i++;
+		result = result * 10 + *str - '0';
+		str++;
 	}
 	return (result);
 }
 
 int main (void)
 {
-	char stringy[] = "1";
+	char stringy[] = "-3";
 
-	printf("%d", ft_atoi(stringy));
+	printf("%d\n", ft_atoi(stringy));
 	return(0);
 }
