@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int	lengths2;
+	size_t	lengths2;
 
 	lengths2 = ft_strlen(s2);
 	if (*s2)

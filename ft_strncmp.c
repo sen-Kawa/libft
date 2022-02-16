@@ -21,14 +21,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (s1[i] - s2[i]);
 }
-
-int	main(void)
-{
-	printf("%i\n", ft_strncmp("hey", "hey", 3));
-	printf("%i\n", ft_strncmp("hey", "Hey", 3));
-	printf("%i\n", ft_strncmp("hey", "hez", 3));
-	printf("%i\n", ft_strncmp("hez", "hey", 3));
-	printf("%i\n", ft_strncmp("aey", "hey", 3));
-	printf("%i\n", ft_strncmp("hey", "aey", 3));
-	return (0);
-}
