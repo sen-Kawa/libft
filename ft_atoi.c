@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 06:27:47 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/02/17 06:30:56 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/02/17 15:04:48 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ int	ft_atoi(const char *str)
 		sign = 1;
 		str++;
 	}
-	
 	while (*str && ft_isdigit(*str) == 1 && (*str == ' ' || *str == '\n'
-			                           || *str == '\f' || *str == '\r' 
-									   || *str == '\t' || *str == '\v'))
+			|| *str == '\f' || *str == '\r'
+			|| *str == '\t' || *str == '\v'))
 	{
 		result = result * 10 + *str - '0';
 		str++;
