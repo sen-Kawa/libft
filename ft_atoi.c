@@ -1,16 +1,27 @@
-#include <stdlib.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/17 06:27:47 by kaheinz           #+#    #+#             */
+/*   Updated: 2022/02/17 06:30:56 by kaheinz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//#include <stdlib.h>
+//#include <ctype.h>
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
-	int  result;
+	int	result;
 	int	sign;
 
 	result = 0;
 	sign = 1;
-	
 	if (*str == '-')
 	{
 		sign = -1;
@@ -22,7 +33,7 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	
-	while (*str && isdigit(*str) == 1 && (*str == ' ' || *str == '\n'
+	while (*str && ft_isdigit(*str) == 1 && (*str == ' ' || *str == '\n'
 			                           || *str == '\f' || *str == '\r' 
 									   || *str == '\t' || *str == '\v'))
 	{
@@ -30,13 +41,4 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (result * sign);
-}
-
-int main (void)
-{
-	char stringy[] = "------47s";
-
-	printf("%d\n", ft_atoi(stringy));
-	printf("%d\n", atoi(stringy));
-	return(0);
 }
