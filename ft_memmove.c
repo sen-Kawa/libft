@@ -16,18 +16,20 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*bufdestination;
 	char	*bufsource;
+	size_t	i;
 
 	bufdestination = (char *)dst;
 	bufsource = (char *)src;
-	if (bufsource != NULL)
+	i = 0;
+	if (bufsource == NULL && bufdestination == NULL)
+		return (NULL);
+	if (bufsource < bufdestination)
 	{
-//		if (bufdestination > bufsource)
-
-		while (len)
-		{
-			*(bufdestination++) = *(bufsource++);
-			len--;
-		}
+		while (i++ <= len)
+			bufdestination[len - i] = bufsource[len - i];
 	}
+	else
+		while (len-- > 0)
+			*(bufdestination++) = *(bufsource++);
 	return (dst);
 }
