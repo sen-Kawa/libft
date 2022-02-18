@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:49:33 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/02/17 05:56:15 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/02/17 20:34:09 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*bufdestination;
-	char	*bufsource;
-	size_t	i;
+	unsigned char	*bufdestination;
+	unsigned char	*bufsource;
 
-	bufdestination = (char *)dst;
-	bufsource = (char *)src;
-	i = 0;
-	if (bufsource == NULL && bufdestination == NULL)
-		return (NULL);
-	if (bufsource < bufdestination)
+	bufdestination = (unsigned char *)dst;
+	bufsource = (unsigned char *)src;
+	if (!len || dst == src)
+		return (dst);
+	if (src < dst)
 	{
-		while (i++ <= len)
-			bufdestination[len - i] = bufsource[len - i];
+		while (len-- > 0)
+			*bufdestination + (len - 1) = *bufsource + (len - 1);
 	}
 	else
-		while (len-- > 0)
+	{
+		while (!len)
+		{
+			len --;
 			*(bufdestination++) = *(bufsource++);
+		}
+	}
 	return (dst);
 }
