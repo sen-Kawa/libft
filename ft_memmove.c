@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:49:33 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/02/18 19:38:37 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/02/18 21:23:54 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!len || dst == src)
 		return (dst);
 	if (src < dst)
-	{
 		while (len-- > 0)
 			*(bufdestination + len) = *(bufsource + len);
-	}
 	else
-	{
 		while (len-- > 0)
-		{
 			*(bufdestination++) = *(bufsource++);
-		}
-	}
 	return (dst);
 }
