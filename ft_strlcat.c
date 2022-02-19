@@ -17,12 +17,16 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	lendst;
-	int	newdstlen;
+	size_t	lendst;
+	size_t	lensrc;
+	size_t	newdstlen;
 
 	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
+	while (dstsize == 0 || dstsize < lendst)
+		return (lensrc + dstsize);
 	ft_memcpy(dst + lendst, src, (dstsize - lendst - 1));
 	newdstlen = ft_strlen(dst);
 	dst[newdstlen] = 0;
-	return (newdstlen);
+	return (lendst + lensrc);
 }
