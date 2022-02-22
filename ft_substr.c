@@ -16,17 +16,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substring;
 	size_t	i;
+	size_t	lens1;
 
 	i = 0;
+	lens1 = ft_strlen(s);
 	substring = malloc(len + 1);
-	if (!s || !substring)
+	if (!s && !substring)
 		return (NULL);
-	while (i < len)
+	if (start >= lens1)
 	{
-		*(substring + i) = *(s + start);
+		substring[0] = 0;
+		return (substring);
+	}
+	while (i < len && s[i + start])
+	{
+		substring[i] = s[i + start];
 		i++;
-		start++;
 	}	
-	*(substring + i) = 0;
+	substring[i] = '\0';
 	return (substring);
 }
