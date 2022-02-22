@@ -10,28 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	concatenated;
-	size_t	lens1;
-	size_t	lens2;
-	char	concatenated;
+	char		*concatenated;
+	int			lens1;
+	int			lens2;
 
-	lens1 = ft_strlen(lens1);
-	lens2 = ft_strlen(lens2);
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
 	concatenated = malloc(lens1 + lens2 + 1);
-	if (!concatenated)
-		return (NULL);
-i	while (!s1)
-		s
-}
-
-int main(void)
-{
-	stringy1[] = "hey";
-	stringy2[] = "there";
-	printf("%s", ft_strjoin(stringy1, stringy2));
+	if (concatenated)
+	{
+		ft_memcpy(concatenated, s1, lens1);
+		ft_memcpy(concatenated + lens1, s2, lens2 + 1);
+	}
+	return (concatenated);
 }
