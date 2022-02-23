@@ -72,5 +72,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = start(s1, set);
 	k = end(s1, set);
-	return (ft_substr(s1, i, (k - i)));
+	if (k == 0)
+		return (ft_calloc(1, 1));
+	return (ft_substr(s1, i, (k - i) + 1));
 }
