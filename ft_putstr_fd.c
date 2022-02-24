@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 22:23:02 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/02/24 22:26:52 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/02/24 22:28:55 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return (0);
+		return ;
 	while (*s)
 	{
 		write(fd, s, 1);
