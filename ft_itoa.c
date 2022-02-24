@@ -9,8 +9,37 @@
 /*   Updated: 2022/02/24 09:50:08 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
+static int	lengnum(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n != 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
+	char	*str;
+	int		i;
 
+	i = lengnum(n);
+	str = ft_calloc(i + 1, sizeof(char));
+	if (n == 0)
+		str[0] = '0';
+	while (n > 0)
+	{
+		str[i - 1] = n % 10 + '0';
+		n = n / 10;
+		i--;
+	}
+	return (str);
 }
