@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 01:47:53 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/03/02 05:04:31 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/03/02 06:06:19 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strdup(const char *s)
 	newstring = malloc(ft_strlen(s) + 1);
 	ft_strlcpy(newstring, s, ft_strlen(newstring));
 	if (newstring == NULL)
-			return (NULL);	
+		return (NULL);
 	return (newstring);
+	free (newstring);
 }
