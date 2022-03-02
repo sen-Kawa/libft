@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:40:38 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/03/02 06:49:44 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/03/02 06:58:21 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] == c || !s[i])
 		{
-			*spl = ft_substr(s, 0, i);
+			spl[i] = ft_substr(s, 0, i);
 			while (s[i] == c)
 				i++;
 			spl++;
