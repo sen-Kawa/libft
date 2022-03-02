@@ -6,7 +6,7 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 14:40:38 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/03/02 06:42:09 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/03/02 06:49:44 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,38 +32,30 @@ static int	count(char const *s, char c)
 	return (count);
 }
 
-static void	split(char const *s, char c, char **split)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
+	char	**spl;
+	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
+	spl = ft_calloc(count((char *)s, c) + 1, sizeof(char *));
+	if (!spl)
+		return (NULL);
 	while (*s)
 	{
 		if (s[i] == c || !s[i])
 		{
-			*split = ft_substr(s, 0, i);
+			*spl = ft_substr(s, 0, i);
 			while (s[i] == c)
 				i++;
-			split++;
+			spl++;
 			s += i;
 			i = 0;
 		}
 		else
 			i++;
 	}
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**spl;
-
-	if (!s)
-		return (NULL);
-	while (*s == c)
-		s++;
-	spl = ft_calloc(count((char *)s, c) + 1, sizeof(char *));
-	if (!spl)
-		return (NULL);
-	split(s, c, spl);
 	return (spl);
 }
