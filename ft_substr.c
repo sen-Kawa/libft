@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	lens1 = ft_strlen(s);
 	substring = malloc(len + 1);
-	if (!s && !substring)
+	if (!s || !substring)
 		return (NULL);
 	if (start >= lens1)
 	{

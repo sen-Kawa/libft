@@ -33,6 +33,8 @@ char	*ft_itoa(int n)
 
 	i = lengnum(n);
 	str = ft_calloc(i + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
