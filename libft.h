@@ -6,15 +6,24 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:16:16 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/02/24 23:04:03 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/05/29 02:13:19 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
+
+//LIBFT
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -50,4 +59,33 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//GET NEXT LINE
+
+char	*get_next_line(int fd);
+char	*reading_from_fd(char *buffer, char *line, int fd);
+void	substr_after_newline(char *line, char *buffer);
+char	*substr_before_newline(char *line);
+char	*stringjoin(char *s1, char *s2);
+void	*ftt_memcpy(void *dst, void *src, size_t n);
+size_t	ftt_strlen(char *str);
+int		finding_newline(const char *s);
+
+//PRINTF
+
+int		ft_printf(const char *fmt, ...);
+int		cases(char type, va_list args);
+int		conv_u(va_list args);
+int		conv_i(va_list args);
+int		conv_c(va_list args);
+int		conv_s(va_list args);
+int		conv_x(va_list args);
+int		conv_upperx(va_list args);
+int		conv_p(va_list args);
+int		hexa_len(unsigned long nbr);
+int		nbr_len(long n);
+void	hexa_nbr(unsigned long n, char *str);
+void	ft_putnbr(int n);
+void	unsigned_nbr(unsigned int n);
+
 #endif
