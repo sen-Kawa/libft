@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefilel                                          :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 16:12:13 by kaheinz           #+#    #+#              #
-#    Updated: 2022/05/29 02:17:13 by kaheinz          ###   ########.fr        #
+#    Updated: 2022/06/07 00:36:18 by kaheinz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,12 @@ ft_putnbr_fd.c ft_calloc.c ft_strnstr.c ft_isascii.c ft_memmove.c ft_strrchr.c\
 conversions_hexa.c conversions_icsu.c ft_printf.c libft_tools.c\
 get_next_line.c get_next_line_utils.c\
 
+BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c\
+		ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
 OBJS = $(SRCS:.c=.o)
+
+OBJSBONUS = ${BONUS:.c=.o}
 
 CC = gcc
 
@@ -31,10 +36,13 @@ CFLAGS = -Werror -Wextra -Wall
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
+bonus:	${OBJS} ${OBJSBONUS}
+		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
+
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) ${OBJSBONUS}
 
 fclean: clean
 	rm -f $(NAME)
