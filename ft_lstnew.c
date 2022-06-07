@@ -6,13 +6,13 @@
 /*   By: kaheinz <kaheinz@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 21:26:58 by kaheinz           #+#    #+#             */
-/*   Updated: 2022/06/07 00:31:31 by kaheinz          ###   ########.fr       */
+/*   Updated: 2022/06/07 12:35:45 by kaheinz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
